@@ -2,15 +2,15 @@
 <html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>章节练习 - 习思想刷题系统</title>
-    <link rel="stylesheet" href="styles.css?v=20260612-3" />
+    <link rel="stylesheet" href="styles.css?v=20260612-4" />
   </head>
   <body data-page="practice">
     <div class="app-shell">
       <header class="topbar">
         <div class="brand-block">
-          <p class="eyebrow">学习题库</p>
+          <p class="eyebrow">智能练习</p>
           <h1>习思想刷题系统</h1>
         </div>
         <nav class="site-nav" aria-label="主要导航">
@@ -22,97 +22,75 @@
         </nav>
         <div class="top-actions">
           <button class="icon-button" id="resetProgress" title="清空记录" type="button">↻</button>
-          <button class="primary-button" id="quickStart" type="button">继续练习</button>
+          <button class="primary-button" id="quickStart" type="button">继续</button>
         </div>
       </header>
 
-      <main class="workspace">
-        <aside class="sidebar">
-          <section class="nav-section">
-            <h2>练习模式</h2>
-            <button class="nav-item active" data-mode="chapter" type="button">章节练习</button>
-            <button class="nav-item" data-mode="random" type="button">随机练习</button>
-            <button class="nav-item" data-mode="mistakes" type="button">错题本</button>
-            <button class="nav-item" data-mode="favorites" type="button">收藏题</button>
-            <button class="nav-item" data-mode="exam" type="button">模拟考试</button>
-          </section>
+      <main class="workspace practice-page">
+        <section class="practice-toolbar">
+          <div class="mode-tabs" aria-label="练习模式">
+            <button class="nav-item active" data-mode="chapter" type="button">章节</button>
+            <button class="nav-item" data-mode="random" type="button">随机</button>
+            <button class="nav-item" data-mode="mistakes" type="button">错题</button>
+            <button class="nav-item" data-mode="favorites" type="button">收藏</button>
+            <button class="nav-item" data-mode="exam" type="button">考试</button>
+          </div>
 
-          <section class="nav-section">
-            <h2>章节</h2>
+          <details class="chapter-picker">
+            <summary>选择章节</summary>
             <div id="chapterList" class="chapter-list"></div>
-          </section>
-        </aside>
+          </details>
+        </section>
 
-        <section class="content-area">
-          <section class="summary-grid" aria-label="学习概览">
-            <article class="metric-card">
-              <span>总题数</span>
-              <strong id="totalQuestions">0</strong>
-            </article>
-            <article class="metric-card">
-              <span>已练习</span>
-              <strong id="answeredQuestions">0</strong>
-            </article>
-            <article class="metric-card">
-              <span>正确率</span>
-              <strong id="accuracyRate">0%</strong>
-            </article>
-            <article class="metric-card">
-              <span>错题</span>
-              <strong id="mistakeCount">0</strong>
-            </article>
-          </section>
-
-          <section class="practice-layout">
-            <article class="question-panel">
-              <div class="practice-header">
-                <div>
-                  <p class="mode-label" id="modeLabel">章节练习</p>
-                  <h2 id="setTitle">导论练习题</h2>
-                </div>
-                <div class="progress-copy">
-                  <span id="questionIndex">1 / 10</span>
-                  <span id="sessionScore">本轮 0 分</span>
-                </div>
+        <section class="practice-layout">
+          <article class="question-panel">
+            <div class="practice-header">
+              <div>
+                <p class="mode-label" id="modeLabel">章节练习</p>
+                <h2 id="setTitle">导论练习题</h2>
               </div>
-
-              <div class="progress-bar" aria-hidden="true">
-                <span id="progressFill"></span>
+              <div class="progress-copy">
+                <span id="questionIndex">1 / 10</span>
+                <span id="sessionScore">本轮 0 分</span>
               </div>
+            </div>
 
-              <div class="question-meta">
-                <span id="questionType">单选题</span>
-                <span id="questionPoint">10 分</span>
+            <div class="progress-bar" aria-hidden="true">
+              <span id="progressFill"></span>
+            </div>
+
+            <div class="question-meta">
+              <span id="questionType">单选题</span>
+              <span id="questionPoint">10 分</span>
+            </div>
+
+            <h3 id="questionText"></h3>
+            <div id="optionsList" class="options-list"></div>
+            <div id="feedback" class="feedback" hidden></div>
+
+            <div class="question-actions">
+              <button class="ghost-button" id="prevQuestion" type="button">上一题</button>
+              <button class="text-button" id="favoriteQuestion" type="button">☆ 收藏</button>
+              <button class="primary-button" id="submitAnswer" type="button">提交</button>
+              <button class="ghost-button" id="nextQuestion" type="button">下一题</button>
+            </div>
+          </article>
+
+          <aside class="answer-sheet" aria-label="答题卡">
+            <div class="sheet-header">
+              <div>
+                <p class="mode-label">答题卡</p>
+                <h2 id="sheetTitle">导论</h2>
               </div>
-
-              <h3 id="questionText"></h3>
-              <div id="optionsList" class="options-list"></div>
-              <div id="feedback" class="feedback" hidden></div>
-
-              <div class="question-actions">
-                <button class="ghost-button" id="prevQuestion" type="button">上一题</button>
-                <button class="text-button" id="favoriteQuestion" type="button">☆ 收藏</button>
-                <button class="primary-button" id="submitAnswer" type="button">提交答案</button>
-                <button class="ghost-button" id="nextQuestion" type="button">下一题</button>
-              </div>
-            </article>
-
-            <aside class="answer-sheet" aria-label="答题卡">
-              <div class="sheet-header">
-                <div>
-                  <p class="mode-label">答题卡</p>
-                  <h2 id="sheetTitle">导论</h2>
-                </div>
-                <button class="text-button" id="restartSet" type="button">重做本组</button>
-              </div>
-              <div id="answerGrid" class="answer-grid"></div>
-              <div class="chapter-status" id="chapterStatus"></div>
-            </aside>
-          </section>
+              <button class="text-button" id="restartSet" type="button">重做本组</button>
+            </div>
+            <div id="answerGrid" class="answer-grid"></div>
+            <div class="chapter-status" id="chapterStatus"></div>
+          </aside>
         </section>
       </main>
     </div>
 
-    <script src="app.js?v=20260612-3"></script>
+    <script src="app.js?v=20260612-4"></script>
   </body>
 </html>

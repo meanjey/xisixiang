@@ -2507,6 +2507,8 @@ function renderChapters() {
 }
 
 function renderSummary() {
+  if (!els.totalQuestions || !els.answeredQuestions || !els.accuracyRate || !els.mistakeCount) return;
+
   const total = allQuestions.length;
   const stats = Object.values(progress.stats);
   const answered = stats.length;

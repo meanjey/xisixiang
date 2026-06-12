@@ -1070,3 +1070,263 @@ button:disabled {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
+
+/* Clean app framework inspired by the 毛概 reference. */
+body {
+  padding-bottom: 76px;
+  background:
+    radial-gradient(circle at top left, rgba(181, 31, 44, 0.08), transparent 30%),
+    var(--page);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.app-shell {
+  width: min(640px, 100%);
+  margin: 0 auto;
+  min-height: 100vh;
+}
+
+.topbar {
+  width: min(640px, 100%);
+  min-height: 82px;
+  margin: 0 auto;
+  padding: 16px;
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 10px 26px rgba(127, 17, 27, 0.18);
+}
+
+.topbar h1 {
+  font-size: 22px;
+}
+
+.top-actions {
+  flex: 0 0 auto;
+}
+
+.site-nav {
+  width: min(640px, 100%);
+  padding: 8px 10px calc(8px + env(safe-area-inset-bottom));
+  position: fixed;
+  left: 50%;
+  right: auto;
+  bottom: 0;
+  z-index: 40;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 6px;
+  transform: translateX(-50%);
+  border-top: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 -12px 30px rgba(33, 37, 43, 0.1);
+}
+
+.site-nav a {
+  min-height: 42px;
+  padding: 6px;
+  border: 0;
+  border-radius: 8px;
+  color: var(--ink-500);
+  background: transparent;
+  font-size: 13px;
+}
+
+.site-nav a.active,
+.site-nav a:hover {
+  color: var(--red-900);
+  background: var(--red-100);
+}
+
+.workspace,
+.page-shell {
+  width: 100%;
+  padding: 14px;
+}
+
+.page-shell,
+.workspace,
+.practice-layout,
+.two-column-page {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+.summary-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-bottom: 0;
+}
+
+.metric-card {
+  min-height: 86px;
+  padding: 14px;
+}
+
+.metric-card strong {
+  font-size: 26px;
+}
+
+.home-actions,
+.chapter-card-grid,
+.chapter-card-grid.compact {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.feature-card,
+.chapter-card {
+  min-height: 126px;
+  padding: 15px;
+}
+
+.primary-feature {
+  background: linear-gradient(135deg, var(--red-900), var(--red-700));
+}
+
+.page-section,
+.question-panel,
+.answer-sheet,
+.practice-toolbar,
+.metric-card,
+.feature-card,
+.chapter-card,
+.review-item,
+.stats-row {
+  border-radius: 14px;
+  box-shadow: 0 12px 30px rgba(33, 37, 43, 0.07);
+}
+
+.practice-toolbar {
+  padding: 12px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+}
+
+.mode-tabs {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 6px;
+}
+
+.mode-tabs .nav-item {
+  min-height: 38px;
+  justify-content: center;
+  padding: 7px 4px;
+  font-size: 13px;
+  text-align: center;
+}
+
+.chapter-picker {
+  margin-top: 10px;
+}
+
+.chapter-picker summary {
+  min-height: 40px;
+  padding: 9px 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--ink-700);
+  background: #fbfbfc;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.chapter-picker .chapter-list {
+  margin-top: 10px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.question-panel,
+.answer-sheet {
+  padding: 16px;
+}
+
+.practice-header,
+.sheet-header {
+  align-items: flex-start;
+}
+
+#questionText {
+  margin-top: 18px;
+  font-size: 21px;
+  line-height: 1.55;
+}
+
+.option-button {
+  min-height: 56px;
+  border-radius: 10px;
+}
+
+.option-key {
+  border-radius: 999px;
+}
+
+.feedback {
+  border-radius: 12px;
+  line-height: 1.7;
+}
+
+.answer-grid {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.answer-dot {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.question-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.question-actions button {
+  width: 100%;
+}
+
+.primary-button,
+.ghost-button,
+.text-button,
+.icon-button {
+  border-radius: 10px;
+}
+
+.stats-row {
+  grid-template-columns: 1fr;
+}
+
+.stats-row b {
+  text-align: left;
+}
+
+@media (max-width: 430px) {
+  .workspace,
+  .page-shell {
+    padding: 12px;
+  }
+
+  .topbar {
+    padding: 14px 12px;
+  }
+
+  .home-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .feature-card {
+    min-height: 112px;
+  }
+
+  .chapter-card-grid,
+  .chapter-card-grid.compact,
+  .chapter-picker .chapter-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .chapter-card {
+    min-height: 122px;
+  }
+}
