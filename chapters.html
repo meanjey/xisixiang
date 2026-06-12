@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>章节 - 习思想刷题系统</title>
+    <link rel="stylesheet" href="styles.css?v=20260612-3" />
+  </head>
+  <body data-page="chapters">
+    <div class="app-shell">
+      <header class="topbar">
+        <div class="brand-block">
+          <p class="eyebrow">章节题库</p>
+          <h1>选择章节</h1>
+        </div>
+        <nav class="site-nav" aria-label="主要导航">
+          <a href="index.html">首页</a>
+          <a href="chapters.html" class="active">章节</a>
+          <a href="practice.html">练习</a>
+          <a href="review.html">复习</a>
+          <a href="stats.html">统计</a>
+        </nav>
+        <div class="top-actions">
+          <a class="primary-button" href="practice.html?mode=random">随机练习</a>
+        </div>
+      </header>
+
+      <main class="page-shell">
+        <section class="page-section">
+          <div class="section-heading">
+            <p class="mode-label">全部章节</p>
+            <h2>导论 + 第 1 到第 16 章</h2>
+          </div>
+          <div id="chapterCards" class="chapter-card-grid"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="app.js?v=20260612-3"></script>
+    <script src="pages.js?v=20260612-3"></script>
+  </body>
+</html>
