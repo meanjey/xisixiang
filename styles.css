@@ -1330,3 +1330,91 @@ body {
     min-height: 122px;
   }
 }
+
+/* Minimal practical pass: four core pages, fewer competing controls. */
+.simple-topbar {
+  justify-content: flex-start;
+}
+
+.simple-topbar .brand-block {
+  flex: 1 1 auto;
+}
+
+.site-nav {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.simple-page,
+.practice-page {
+  gap: 12px;
+}
+
+.simple-actions {
+  grid-template-columns: 1fr;
+}
+
+.simple-actions .feature-card {
+  min-height: 92px;
+}
+
+.simple-section {
+  padding: 16px;
+}
+
+.simple-chapters {
+  grid-template-columns: 1fr;
+}
+
+.simple-chapters .chapter-card {
+  min-height: 92px;
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.simple-chapters .chapter-card h3 {
+  font-size: 18px;
+}
+
+.simple-picker {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.simple-picker summary {
+  background: var(--paper);
+  box-shadow: 0 8px 20px rgba(33, 37, 43, 0.06);
+}
+
+.practice-page .question-panel {
+  padding: 18px;
+}
+
+.practice-page .answer-sheet {
+  padding: 14px;
+}
+
+.compact-sheet .chapter-status {
+  display: none;
+}
+
+.compact-sheet .answer-grid {
+  margin-bottom: 4px;
+}
+
+.feature-card:hover,
+.chapter-card:hover,
+.review-item:hover,
+.stats-row:hover {
+  transform: none;
+}
+
+@media (min-width: 720px) {
+  .simple-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .simple-chapters {
+    grid-template-columns: 1fr;
+  }
+}

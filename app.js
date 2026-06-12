@@ -2822,13 +2822,13 @@ function bindEvents() {
     item.addEventListener("click", () => setMode(item.dataset.mode));
   });
 
-  els.prevQuestion.addEventListener("click", () => go(-1));
-  els.nextQuestion.addEventListener("click", () => go(1));
-  els.submitAnswer.addEventListener("click", submitAnswer);
-  els.favoriteQuestion.addEventListener("click", toggleFavorite);
-  els.restartSet.addEventListener("click", restartSet);
-  els.quickStart.addEventListener("click", () => startChapter(state.chapterId));
-  els.resetProgress.addEventListener("click", () => {
+  els.prevQuestion?.addEventListener("click", () => go(-1));
+  els.nextQuestion?.addEventListener("click", () => go(1));
+  els.submitAnswer?.addEventListener("click", submitAnswer);
+  els.favoriteQuestion?.addEventListener("click", toggleFavorite);
+  els.restartSet?.addEventListener("click", restartSet);
+  els.quickStart?.addEventListener("click", () => startChapter(state.chapterId));
+  els.resetProgress?.addEventListener("click", () => {
     const confirmed = window.confirm("确定要清空本机练习记录吗？题库不会被删除。");
     if (!confirmed) return;
     progress = { stats: {}, mistakes: {}, favorites: {}, lastIndex: 0 };

@@ -3,44 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <title>章节练习 - 习思想刷题系统</title>
-    <link rel="stylesheet" href="styles.css?v=20260612-4" />
+    <title>练习 - 习思想刷题系统</title>
+    <link rel="stylesheet" href="styles.css?v=20260612-5" />
   </head>
   <body data-page="practice">
     <div class="app-shell">
-      <header class="topbar">
+      <header class="topbar simple-topbar">
         <div class="brand-block">
-          <p class="eyebrow">智能练习</p>
-          <h1>习思想刷题系统</h1>
-        </div>
-        <nav class="site-nav" aria-label="主要导航">
-          <a href="index.html">首页</a>
-          <a href="chapters.html">章节</a>
-          <a href="practice.html" class="active">练习</a>
-          <a href="review.html">复习</a>
-          <a href="stats.html">统计</a>
-        </nav>
-        <div class="top-actions">
-          <button class="icon-button" id="resetProgress" title="清空记录" type="button">↻</button>
-          <button class="primary-button" id="quickStart" type="button">继续</button>
+          <p class="eyebrow">专注练习</p>
+          <h1>章节刷题</h1>
         </div>
       </header>
 
       <main class="workspace practice-page">
-        <section class="practice-toolbar">
-          <div class="mode-tabs" aria-label="练习模式">
-            <button class="nav-item active" data-mode="chapter" type="button">章节</button>
-            <button class="nav-item" data-mode="random" type="button">随机</button>
-            <button class="nav-item" data-mode="mistakes" type="button">错题</button>
-            <button class="nav-item" data-mode="favorites" type="button">收藏</button>
-            <button class="nav-item" data-mode="exam" type="button">考试</button>
-          </div>
-
-          <details class="chapter-picker">
-            <summary>选择章节</summary>
-            <div id="chapterList" class="chapter-list"></div>
-          </details>
-        </section>
+        <details class="chapter-picker simple-picker">
+          <summary>切换章节</summary>
+          <div id="chapterList" class="chapter-list"></div>
+        </details>
 
         <section class="practice-layout">
           <article class="question-panel">
@@ -76,21 +55,28 @@
             </div>
           </article>
 
-          <aside class="answer-sheet" aria-label="答题卡">
+          <aside class="answer-sheet compact-sheet" aria-label="答题卡">
             <div class="sheet-header">
               <div>
                 <p class="mode-label">答题卡</p>
                 <h2 id="sheetTitle">导论</h2>
               </div>
-              <button class="text-button" id="restartSet" type="button">重做本组</button>
+              <button class="text-button" id="restartSet" type="button">重做</button>
             </div>
             <div id="answerGrid" class="answer-grid"></div>
             <div class="chapter-status" id="chapterStatus"></div>
           </aside>
         </section>
       </main>
+
+      <nav class="site-nav" aria-label="主要导航">
+        <a href="index.html">首页</a>
+        <a href="chapters.html">章节</a>
+        <a href="practice.html" class="active">练习</a>
+        <a href="review.html">复习</a>
+      </nav>
     </div>
 
-    <script src="app.js?v=20260612-4"></script>
+    <script src="app.js?v=20260612-5"></script>
   </body>
 </html>

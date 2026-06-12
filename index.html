@@ -2,30 +2,20 @@
 <html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>首页 - 习思想刷题系统</title>
-    <link rel="stylesheet" href="styles.css?v=20260612-4" />
+    <link rel="stylesheet" href="styles.css?v=20260612-5" />
   </head>
   <body data-page="home">
     <div class="app-shell">
-      <header class="topbar">
+      <header class="topbar simple-topbar">
         <div class="brand-block">
           <p class="eyebrow">学习题库</p>
           <h1>习思想刷题系统</h1>
         </div>
-        <nav class="site-nav" aria-label="主要导航">
-          <a href="index.html" class="active">首页</a>
-          <a href="chapters.html">章节</a>
-          <a href="practice.html">练习</a>
-          <a href="review.html">复习</a>
-          <a href="stats.html">统计</a>
-        </nav>
-        <div class="top-actions">
-          <a class="primary-button" href="practice.html">继续练习</a>
-        </div>
       </header>
 
-      <main class="page-shell">
+      <main class="page-shell simple-page">
         <section class="summary-grid" aria-label="学习概览">
           <article class="metric-card">
             <span>总题数</span>
@@ -45,36 +35,31 @@
           </article>
         </section>
 
-        <section class="home-actions" aria-label="快速入口">
+        <section class="home-actions simple-actions" aria-label="常用操作">
           <a class="feature-card primary-feature" href="chapters.html">
-            <span>章节练习</span>
-            <strong>按导论和 1-16 章逐章刷题</strong>
+            <span>按章节练习</span>
+            <strong>从导论到第十六章逐章刷题</strong>
           </a>
-          <a class="feature-card" href="practice.html?mode=random">
-            <span>随机练习</span>
-            <strong>从全题库抽 10 题快速检测</strong>
-          </a>
-          <a class="feature-card" href="practice.html?mode=exam">
-            <span>模拟考试</span>
-            <strong>随机组卷，完整走一遍</strong>
+          <a class="feature-card" href="practice.html">
+            <span>继续练习</span>
+            <strong>直接进入上次练习的题组</strong>
           </a>
           <a class="feature-card" href="review.html">
-            <span>错题收藏</span>
-            <strong>集中处理薄弱题和重点题</strong>
+            <span>错题复习</span>
+            <strong>集中处理答错题和收藏题</strong>
           </a>
         </section>
-
-        <section class="page-section">
-          <div class="section-heading">
-            <p class="mode-label">最近章节</p>
-            <h2>继续从章节开始</h2>
-          </div>
-          <div id="chapterPreview" class="chapter-card-grid compact"></div>
-        </section>
       </main>
+
+      <nav class="site-nav" aria-label="主要导航">
+        <a href="index.html" class="active">首页</a>
+        <a href="chapters.html">章节</a>
+        <a href="practice.html">练习</a>
+        <a href="review.html">复习</a>
+      </nav>
     </div>
 
-    <script src="app.js?v=20260612-4"></script>
-    <script src="pages.js?v=20260612-4"></script>
+    <script src="app.js?v=20260612-5"></script>
+    <script src="pages.js?v=20260612-5"></script>
   </body>
 </html>

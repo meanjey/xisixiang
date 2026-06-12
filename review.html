@@ -2,31 +2,21 @@
 <html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>复习 - 习思想刷题系统</title>
-    <link rel="stylesheet" href="styles.css?v=20260612-4" />
+    <link rel="stylesheet" href="styles.css?v=20260612-5" />
   </head>
   <body data-page="review">
     <div class="app-shell">
-      <header class="topbar">
+      <header class="topbar simple-topbar">
         <div class="brand-block">
           <p class="eyebrow">复习中心</p>
           <h1>错题与收藏</h1>
         </div>
-        <nav class="site-nav" aria-label="主要导航">
-          <a href="index.html">首页</a>
-          <a href="chapters.html">章节</a>
-          <a href="practice.html">练习</a>
-          <a href="review.html" class="active">复习</a>
-          <a href="stats.html">统计</a>
-        </nav>
-        <div class="top-actions">
-          <a class="primary-button" href="practice.html?mode=mistakes">练错题</a>
-        </div>
       </header>
 
-      <main class="page-shell two-column-page">
-        <section class="page-section">
+      <main class="page-shell simple-page">
+        <section class="page-section simple-section">
           <div class="section-heading">
             <p class="mode-label">自动收录</p>
             <h2>错题本</h2>
@@ -34,7 +24,7 @@
           <div id="mistakeList" class="review-list"></div>
         </section>
 
-        <section class="page-section">
+        <section class="page-section simple-section">
           <div class="section-heading">
             <p class="mode-label">手动标记</p>
             <h2>收藏题</h2>
@@ -42,9 +32,16 @@
           <div id="favoriteList" class="review-list"></div>
         </section>
       </main>
+
+      <nav class="site-nav" aria-label="主要导航">
+        <a href="index.html">首页</a>
+        <a href="chapters.html">章节</a>
+        <a href="practice.html">练习</a>
+        <a href="review.html" class="active">复习</a>
+      </nav>
     </div>
 
-    <script src="app.js?v=20260612-4"></script>
-    <script src="pages.js?v=20260612-4"></script>
+    <script src="app.js?v=20260612-5"></script>
+    <script src="pages.js?v=20260612-5"></script>
   </body>
 </html>

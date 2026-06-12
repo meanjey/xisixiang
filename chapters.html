@@ -2,41 +2,38 @@
 <html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>章节 - 习思想刷题系统</title>
-    <link rel="stylesheet" href="styles.css?v=20260612-4" />
+    <link rel="stylesheet" href="styles.css?v=20260612-5" />
   </head>
   <body data-page="chapters">
     <div class="app-shell">
-      <header class="topbar">
+      <header class="topbar simple-topbar">
         <div class="brand-block">
           <p class="eyebrow">章节题库</p>
           <h1>选择章节</h1>
         </div>
-        <nav class="site-nav" aria-label="主要导航">
-          <a href="index.html">首页</a>
-          <a href="chapters.html" class="active">章节</a>
-          <a href="practice.html">练习</a>
-          <a href="review.html">复习</a>
-          <a href="stats.html">统计</a>
-        </nav>
-        <div class="top-actions">
-          <a class="primary-button" href="practice.html?mode=random">随机练习</a>
-        </div>
       </header>
 
-      <main class="page-shell">
-        <section class="page-section">
+      <main class="page-shell simple-page">
+        <section class="page-section simple-section">
           <div class="section-heading">
-            <p class="mode-label">全部章节</p>
+            <p class="mode-label">共 170 题</p>
             <h2>导论 + 第 1 到第 16 章</h2>
           </div>
-          <div id="chapterCards" class="chapter-card-grid"></div>
+          <div id="chapterCards" class="chapter-card-grid simple-chapters"></div>
         </section>
       </main>
+
+      <nav class="site-nav" aria-label="主要导航">
+        <a href="index.html">首页</a>
+        <a href="chapters.html" class="active">章节</a>
+        <a href="practice.html">练习</a>
+        <a href="review.html">复习</a>
+      </nav>
     </div>
 
-    <script src="app.js?v=20260612-4"></script>
-    <script src="pages.js?v=20260612-4"></script>
+    <script src="app.js?v=20260612-5"></script>
+    <script src="pages.js?v=20260612-5"></script>
   </body>
 </html>
